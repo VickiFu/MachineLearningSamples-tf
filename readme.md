@@ -58,8 +58,8 @@ $ az ml experiment submit -c docker tf_mnist.py
 
 You can also run `tf_mnist.py` in a Docker container in a remote machine. Note you need to create/configure myvm.compute.
 ```
-# attach a new compute context
-$ az ml computetarget attach --name myvm --address <ip address or FQDN> --username <username> --password <pwd> --type remotedocker
+# attach a new compute context (updated)
+$az ml computetarget attach remotedocker --name <compute target name> --address <ip address or FQDN> --username <admin username> --password <admin password>
 
 # prepare the Docker image
 $ az ml experiment prepare -c myvm
