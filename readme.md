@@ -59,7 +59,7 @@ $ az ml experiment submit -c docker tf_mnist.py
 You can also run `tf_mnist.py` in a Docker container in a remote machine. Note you need to create/configure myvm.compute.
 ```
 # attach a new compute context
-$ az ml computetarget attach --name myvm --address <ip address or FQDN> --username <username> --password <pwd> --type remotedocker
+$ az ml computetarget attach remotedocker --name myvm --address <IP address> --username <username> --password <password>
 
 # prepare the Docker image
 $ az ml experiment prepare -c myvm
@@ -78,7 +78,7 @@ Create an Ubuntu-based Data Science Virtual Machine(DSVM) in Azure portal using 
 ### Step 2. Attach the compute context
 Run following command to add the GPU VM as a compute target in your current project:
 ```
-$ az ml computetarget attach --name myvm --address <ip address or FQDN> --username <username> --password <pwd> --type remotedocker
+$ az ml computetarget attach remotedocker --name myvm --address <IP address> --username <username> --password <password>
 ```
 The above command creates a `myvm.compute` and `myvm.runconfig` file under the `aml_config` folder.
 
